@@ -17,20 +17,21 @@ public class WelcomeActivity extends Activity {
 		setContentView(R.layout.startup);
 		mTimer = new Timer();
 		mTimer.schedule(new TimerTask() {
-			
+
 			@Override
 			public void run() {
-				Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
+				Intent intent = new Intent(WelcomeActivity.this,
+						MainActivity.class);
 				startActivity(intent);
 				finish();
-				
+
 			}
-		},1000);
+		}, 1000);
 	}
-	
+
 	@Override
 	protected void onStop() {
-		if(mTimer!=null) {
+		if (mTimer != null) {
 			mTimer.cancel();
 			mTimer = null;
 		}
